@@ -1,6 +1,6 @@
 ---
 title: "(My) Essential R Resouces"
-subtitle: ""
+subtitle: "Slides: http://bit.ly/MyEssentialR"
 author: "Sam Abbott (@seabbs)"
 institute: "University of Bristol"
 date: "2019/04/23"
@@ -491,6 +491,8 @@ class: inverse
 class: center, inverse, middle
 
 # Thanks for listening
+
+## Slides: http://bit.ly/MyEssentialR
 
 ## Use my stuff: https://github.com/seabbs
 
