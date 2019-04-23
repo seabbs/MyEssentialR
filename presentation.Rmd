@@ -1,0 +1,499 @@
+---
+title: "(My) Essential R Resouces"
+subtitle: ""
+author: "Sam Abbott (@seabbs)"
+institute: "University of Bristol"
+date: "2019/04/23"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse
+
+# Outline
+
+1. (My)?
+
+1. Who am I
+
+1. Basics
+
+1. Getting Help
+
+1. Community
+
+1. Packages
+
+1. Advanced
+
+1. Tips
+
+1. Wrap up
+
+---
+class: inverse
+
+# (My)? 
+
+I sat down to write this and realised that:
+
+1. `R` has a massive ecosystem
+
+1. What matters to me is not necessarily going to matter to you
+
+1. My background is different to yours
+
+So instead of talking about 'essential' resources I am going to be talking about resources that have been important for my learning.
+
+Hopefully I will cover some things that you find useful and if not hopefully I will point out some other ways of learning more that you can take.
+
+Feel free to talk to me afterwards or contact me on Twitter (@seabbs) if you think I have missed anything out (I will have).
+
+---
+
+class: inverse
+
+
+# Who am I 
+
+- 4th year PhD student at the University of Bristol. ~95% done ...
+
+- Former data scientist at Funding Circle (a mid PhD break).
+
+- Background in Mathematics, Mathematical Biology, and Theoretical Physics.
+
+- Reformed Matlab user. R user for the last 4 years. 
+
+- I use R for data munging, modelling, visualisation, and as an interface to C (via Rcpp), Stan, JAGs, Python, Libbi etc. 
+
+- Author of `getTBinR` (https://www.samabbott.co.uk/getTBinR/) and `idmodelr` (https://www.samabbott.co.uk/idmodelr/) (WIP). Hexstickers available :)
+
+- Tweets using @seabbs and blogs about R at https://www.samabbott.co.uk
+
+See  https://www.samabbott.co.uk for more.
+
+---
+
+class: inverse, center
+
+
+# The basics
+
+---
+class: inverse
+
+# Rstudio<sup>1</sup> 
+
+An IDE (integrated development environment) focussed on R.
+
+## Pros
+
+- Function autocomplete/suggest.
+
+- Integrated help and plot viewing.
+
+- Jupyter style interactive notebooks.
+
+- Contains an integreted terminal, git client, database tab, data viewer etc.
+
+- Great templates for presentations, packages, reports etc.
+
+- Open source server version that works well in Docker (great for reproducible research/cloud compute).
+
+.footnote[
+[1] https://www.rstudio.com/products/rstudio/download/
+]
+---
+
+class: inverse
+
+# Rstudio<sup>1</sup> 
+
+An IDE (integrated development environment) focussed on R.
+
+## Cons
+
+- Not an open source project. Run by a for profit company
+
+Alternatives exist (i.e Juypter notebooks, Sublime + plug ins) but I would not recommend them to anyone and discourage anyone except from an advanced user from using them.
+
+.footnote[
+[1] https://www.rstudio.com/products/rstudio/download/
+]
+---
+
+class: inverse
+
+# R for Data Science<sup>2</sup>
+
+ A fantastic book that aims to help you learn the most important tools in R  to allow you to do data science. Please read this book its free! 
+
+## Comments
+
+
+
+- Teaches a consistent framework (the `tidyverse`) for dealing with data. Other frameworks exist (i.e `datatable`) but I would personally recomend the `tidyverse`. 
+
+- Learn to love the `dataframe`. All `tidyverse` tools are tuned with it in mind and sticking with it will massively improve your code. 
+
+- `tidyverse` packages also have their own documentation<sup>3</sup>.
+
+.footnote[
+[2] https://r4ds.had.co.nz, [3] https://www.tidyverse.org
+]
+---
+class: inverse
+
+# Rstudio Cheat sheets<sup>4</sup> 
+
+Cheat sheets for most of the major packages. Great to give you an overview of a package.
+
+```{r, echo = FALSE, out.width = "45%", fig.align = "center"}
+knitr::include_graphics("img/syntax.png")
+```
+
+For those of you on Twitter you may like my random cheat sheet bot<sup>5</sup>.
+
+.footnote[
+
+
+[4] https://www.rstudio.com/resources/cheatsheets/#ide, [5] https://twitter.com/daily_r_sheets
+]
+
+---
+
+class: inverse, center
+
+
+# Getting Help
+
+
+---
+class: inverse
+
+# Making a Reprex
+
+The R community is very welcoming. If you can't find the answer you need feel free to ask. The first step is to create a reproducible example (reprex),
+
+- Make sure your code is reproducible and contains everything you need to run it (i.e libraries).
+
+- Make it minimal. Remove everything that isn't directly related to your problem.
+
+The `reprex` package can help with this. See more here<sup>6</sup>. 80% of the time this will help you to fix your problem, for the other 20% try....
+
+.footnote[
+
+[6] https://www.tidyverse.org/help/#reprex
+]
+
+---
+class: inverse
+
+# StackOverflow<sup>7</sup> 
+
+You've probably already used StackOverflow a lot already. It can be a great place to learn from previous questions, get help with unanswered questions, and learn from answering questions. Answers can be as simple as restarting R.<sup>8</sup>
+
+```{r, echo = FALSE, out.width = "80%", fig.align = "center"}
+knitr::include_graphics("img/stack.png")
+```
+
+Make sure to use the R tag, as well as any others that are relevant. It can be worth checking out the similar questions section to see if any answers are lurking there as well.
+.footnote[
+[7]  https://stackoverflow.com/questions/tagged/r, 
+[8]  https://stackoverflow.com/users/9295446/sam-abbott?tab=answers
+]
+---
+class: inverse
+
+# Rstudio community<sup>9</sup> 
+
+If StackOverflow has a fault it can be that it is quite intimidating. The Rstudio community forum offers a nice change of pace with a much friendlier community. 
+
+It's especially good for questions about the `tidyverse`, `shiny` and Rstudio more generally.
+
+.footnote[
+[9]  https://community.rstudio.com
+]
+---
+class: inverse
+
+# Alternatives 
+
+### Twitter
+
+Can be a good place for question asking but most questions will be hard to fit into the maximum tweet length. Consider writing the reprex elsewhere and linking. More on Twitter in a few slides.
+
+### Mailing lists
+
+Many packages have their own mailing lists and this can be a good place to get help from specialists. 
+
+###  GitHub Issues
+
+Many packages are hosted on GitHub (or other version control sites). These sites allow users to open issues against packages. This can be a good option when you think you have found a bug. 
+---
+
+class: inverse, center
+
+
+# The community
+
+---
+
+class: inverse
+
+# #rstats Twitter<sup>10</sup> 
+
+A great place to get help, follow new developments, particpate in discussions and share work. Extremely friendly so feel free to just jump in!
+
+Some suggested follows:
+
+- **@dataandme:** For tutorials etc.
+
+- **@cboettig:** Open science.
+
+- **@noamross:** GAMs, GAMs, and GAMs (they are awesome check them out).
+
+- **@topepos:** Tooling for machine learning. Try the book<sup>11</sup>.
+
+- **@sellorm:** For a DevOps perspective on R.
+
+- **@ShirinGlander:** Machine learning tutorials.
+
+.footnote[
+
+[10] https://twitter.com/search?q=%23rstats&src=tyah, 
+
+[11] http://appliedpredictivemodeling.com
+]
+---
+
+class: inverse
+
+# Rweekly<sup>12</sup> 
+
+Provides a weekly summary of R community content. Comparable, but better than, R bloggers as directly links to the source material and is more manageable (i.e weekly rather than daily).
+
+Very welcoming so consider submitting any R work you are producing. Typically gives me 200-1000 additional blog views.
+
+.footnote[
+
+[12] https://rweekly.org
+]
+
+---
+
+class: inverse
+
+# ROpenSci<sup>13</sup> 
+
+Aims to foster a culture that values open and reproducible research using shared data and reusable software.
+
+Resources: 
+
+- Infrastructure packages (i.e data APIs etc.)
+- Forum
+- Blog highlighting best practises, tools etc.
+
+.footnote[
+
+[13] https://ropensci.org
+]
+
+---
+class: inverse
+
+# The Journal of Open Source Software (JOSS)<sup>14</sup> 
+
+JOSS is a developer friendly, open access journal for research software packages. If you need publications from your R work this is the perfect place. 
+
+It can also be a great resource for finding new packages that meet certain standards (similar to ROpenSci but with a wider scope). 
+
+Check out this paper (mine :)) for an example of the process<sup>15</sup> 
+
+.footnote[
+[14] http://joss.theoj.org/about,
+
+[15] http://joss.theoj.org/papers/10.21105/joss.01260
+]
+
+---
+
+class: inverse, center
+
+
+# Packages
+
+---
+
+class: inverse
+
+# The issue
+
+R has a massive ecosystem. 
+
+This can be both a blessing and a curse. 
+
+If you find a package that solves an issue your having how do you know it is the best choice or if it is even working correctly? 
+
+---
+
+class: inverse
+
+# What I look for
+
+- Is it hosted on GitHub (or other version control)? If it only has a GitHub this means it is probably still under development so take care.
+
+- Is it on CRAN?
+
+- Does it have seperate documentation<sup>16</sup>?
+
+- Does it have at least one vignette<sup>17</sup>?
+
+- Is it being actively maintained?
+
+If any of these are not true I would start thinking seriously about not using this package.
+
+
+*Note: If it is an old, popular, package like `deSolve` then more latitude can be given.*
+
+.footnote[
+
+[16] https://www.samabbott.co.uk/getTBinR/, 
+
+[17] https://www.samabbott.co.uk/getTBinR/articles/intro.html
+]
+---
+
+class: inverse
+
+# Other standards
+
+- Anything published by ROpenSci or JOSS will follow community best practises and likely be very safe to use.
+
+- Packages published along side other journal articles are usually fairly complete. Note however that these packages sometimes get abondoned after publication.
+
+---
+
+class: inverse
+
+# Build your own 
+
+Consider building your own package early on in your R learning journey. This can simply contain some personal functions you use every day and doesn't need to go on CRAN. 
+
+Learning to  make packages takes an afternoon and will teach you what makes a good package.
+
+Resources: 
+
+- R packages by Hadley Wickham<sup>18</sup>.
+
+- `usethis` package<sup>19</sup>.
+- Get inspiration from other packages. I use `dplyr` for this<sup20</sup>.
+
+- Packages can be used to house analysis projects. See here<sup>21</sup>.
+
+
+.footnote[
+
+[18] http://r-pkgs.had.co.nz,
+[19] https://github.com/r-lib/usethis
+[20] https://dplyr.tidyverse.org,
+[21] https://www.samabbott.co.uk/DirectEffBCGPolicyChange/
+]
+
+---
+
+class: inverse 
+
+# Advanced
+
+- **Advanced R:** A fantastic book by Hadley Wickham that explores the inner workings of R. A great resource for learning about S3 and S6 methods, Rccp etc.<sup>22</sup> 
+
+- **Rmarkdown:** Produce reproducible documents using R. Great for literate coding. Takes a few hours to master<sup>23</sup>.
+
+- **Blogdown:** Blog with R and Rmarkdown<sup>24</sup>
+
+- **Bookdown:** Write books in R. Also great for publications, reports etc.<sup>25</sup>
+
+- **Shiny:** Develop interactive interfaces with R. You can get your first app working in minute<sup>26</sup>. I recommend getting started with `flexdashboard`<sup>27</sup>.
+
+.footnote[
+
+[22] http://adv-r.had.co.nz,
+[23] https://bookdown.org/yihui/rmarkdown/,
+[24] https://bookdown.org/yihui/blogdown/get-started.html,
+[25] https://bookdown.org/yihui/bookdown/get-started.html,
+[26] https://shiny.rstudio.com,
+[27] https://rmarkdown.rstudio.com/flexdashboard/
+]
+
+---
+
+class: inverse
+
+# Tips
+
+* Don't try and learn R in a vacuum. Pick a project and use that to develop your knowledge.
+
+* Share your work as widely as you can. Preparing things for others to use can be a great learning process. 
+
+* Don't worry about making things perfect. Develop, release, and repeat. 
+
+* R is great as an interface. Interfacing with databases is a particular highlight<sup>28</sup>.
+
+* Remember to use debug mode! Activated with `browser()`  in a function. Learning this has saved me hours when writing functions.
+
+* Pick a few people to follow and review their work in detail. This can be a great way to learn. Feel free to stalk my GitHub<sup>29</sup :) 
+
+
+.footnote[
+[28] https://db.rstudio.com/dplyr/
+[29] https://github.com/seabbs
+]
+
+
+---
+
+class: inverse
+
+# Wrap up
+
+* Use Rstudio<sup>30</sup>.
+
+* Read  R for Data Science<sup>31</sup>.
+
+* If you run into issues make a Reprex and reach out for help.
+
+* Think about the packages you are using.
+
+* Decide what you want to learn and follow people working on/writing about that area.
+
+* Read up on the tools they are using.
+
+* Have fun!
+
+.footnote[
+
+[30] https://www.rstudio.com/products/rstudio/download/,
+[31] https://r4ds.had.co.nz
+] 
+---
+
+class: center, inverse, middle
+
+# Thanks for listening
+
+## Use my stuff: https://github.com/seabbs
+
+## Read  my stuff: https://www.samabbott.co.uk
+
+## Tweet at me: @seabbs
